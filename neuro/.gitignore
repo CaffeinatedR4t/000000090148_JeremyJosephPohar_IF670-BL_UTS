@@ -1,0 +1,46 @@
+node_modules/
+.expo/
+.expo-shared/
+web-build/
+*.log
+.env
+.env.*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Expo / React Native caches
+.npm/
+.yarn/
+.pnpm-store/
+.metro-health-check*
+.cache/
+
+# Build outputs
+dist/
+build/
+
+# Crash / debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Native credentials / signing
+*.keystore
+*.jks
+*.p12
+*.pem
+*.key
+
+# Firebase / service credentials (if used)
+google-services.json
+GoogleService-Info.plist
+
+# Local env overrides
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
