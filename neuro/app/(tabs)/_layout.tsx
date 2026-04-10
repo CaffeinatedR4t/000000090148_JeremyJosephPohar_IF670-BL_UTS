@@ -32,8 +32,10 @@ export default function TabsLayout() {
         headerShown: false,
         tabBarStyle: {
           backgroundColor: C.tabBar,
-          borderTopColor: C.border,
-          borderTopWidth: 1,
+          borderTopColor: 'transparent',
+          borderTopWidth: 0,
+          elevation: 0,
+          shadowOpacity: 0,
           height: 60,
           paddingBottom: 8,
         },

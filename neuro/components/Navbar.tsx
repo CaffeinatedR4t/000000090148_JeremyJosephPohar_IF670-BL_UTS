@@ -6,6 +6,11 @@ import { useApp } from '../context/AppContext';
 import { Colors } from '../constants/Colors';
 import BrandLogo from './BrandLogo';
 
+const NAVBAR_LOGO_HEIGHT = 28;
+const NAVBAR_LOGO_WIDTH = 86;
+const NAVBAR_CART_ICON_SIZE = 22;
+const NAVBAR_CART_BUTTON_SIZE = 40;
+
 export default function Navbar({ title }: { title?: string }) {
   const { isDark, cartCount } = useApp();
   const C = isDark ? Colors.dark : Colors.light;
@@ -15,7 +20,7 @@ export default function Navbar({ title }: { title?: string }) {
     <View style={[styles.navbar, { backgroundColor: C.background, borderBottomColor: C.border }]}>
       {/* Logo / Title */}
       <View style={styles.left}>
-        <BrandLogo width={104} height={34} />
+        <BrandLogo width={NAVBAR_LOGO_WIDTH} height={NAVBAR_LOGO_HEIGHT} />
       </View>
 
       {/* Right - cart */}
@@ -24,7 +29,7 @@ export default function Navbar({ title }: { title?: string }) {
         onPress={() => router.push('/(tabs)/trade')}
         accessibilityLabel="Trade Queue"
       >
-        <Ionicons name="bag-outline" size={24} color={C.textPrimary} />
+        <Ionicons name="bag-outline" size={NAVBAR_CART_ICON_SIZE} color={C.textPrimary} />
         {cartCount > 0 && (
           <View style={[styles.badge, { backgroundColor: C.primary }]}>
             <Text style={styles.badgeText}>{cartCount > 99 ? '99+' : cartCount}</Text>
@@ -51,8 +56,8 @@ const styles = StyleSheet.create({
     paddingLeft: 0,
   },
   cartBtn: {
-    width: 44,
-    height: 44,
+    width: NAVBAR_CART_BUTTON_SIZE,
+    height: NAVBAR_CART_BUTTON_SIZE,
     alignItems: 'center',
     justifyContent: 'center',
     marginRight: 0,
